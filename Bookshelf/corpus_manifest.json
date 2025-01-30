@@ -1,0 +1,428 @@
+{
+  "novels": [
+    {
+      "id": 1342,
+      "title": "Pride and Prejudice",
+      "author": "Austen",
+      "year": 1813,
+      "genre": "Romance"
+    },
+    {
+      "id": 84,
+      "title": "Frankenstein",
+      "author": "Shelley",
+      "year": 1818,
+      "genre": "Gothic"
+    },
+    {
+      "id": 11,
+      "title": "Alice in Wonderland",
+      "author": "Carroll",
+      "year": 1865,
+      "genre": "Fantasy"
+    },
+    {
+      "id": 1661,
+      "title": "Sherlock Holmes",
+      "author": "Doyle",
+      "year": 1887,
+      "genre": "Mystery"
+    },
+    {
+      "id": 2701,
+      "title": "Moby Dick",
+      "author": "Melville",
+      "year": 1851,
+      "genre": "Adventure"
+    },
+    {
+      "id": 98,
+      "title": "Tale of Two Cities",
+      "author": "Dickens",
+      "year": 1859,
+      "genre": "Historical Fiction"
+    },
+    {
+      "id": 1400,
+      "title": "Great Expectations",
+      "author": "Dickens",
+      "year": 1861,
+      "genre": "Coming of Age"
+    },
+    {
+      "id": 145,
+      "title": "Middlemarch",
+      "author": "Eliot",
+      "year": 1871,
+      "genre": "Realism"
+    },
+    {
+      "id": 174,
+      "title": "The Picture of Dorian Gray",
+      "author": "Wilde",
+      "year": 1890,
+      "genre": "Gothic"
+    },
+    {
+      "id": 768,
+      "title": "Wuthering Heights",
+      "author": "Bronte",
+      "year": 1847,
+      "genre": "Gothic Romance"
+    },
+    {
+      "id": 161,
+      "title": "Sense and Sensibility",
+      "author": "Austen",
+      "year": 1811,
+      "genre": "Romance"
+    },
+    {
+      "id": 1952,
+      "title": "The Yellow Wallpaper",
+      "author": "Gilman",
+      "year": 1892,
+      "genre": "Gothic"
+    },
+    {
+      "id": 45,
+      "title": "Anne of Green Gables",
+      "author": "Montgomery",
+      "year": 1908,
+      "genre": "Coming of Age"
+    },
+    {
+      "id": 158,
+      "title": "Emma",
+      "author": "Austen",
+      "year": 1815,
+      "genre": "Romance"
+    },
+    {
+      "id": 141,
+      "title": "Little Women",
+      "author": "Alcott",
+      "year": 1868,
+      "genre": "Coming of Age"
+    },
+    {
+      "id": 215,
+      "title": "The Call of the Wild",
+      "author": "London",
+      "year": 1903,
+      "genre": "Adventure"
+    },
+    {
+      "id": 120,
+      "title": "Treasure Island",
+      "author": "Stevenson",
+      "year": 1883,
+      "genre": "Adventure"
+    },
+    {
+      "id": 844,
+      "title": "The Importance of Being Earnest",
+      "author": "Wilde",
+      "year": 1895,
+      "genre": "Comedy"
+    },
+    {
+      "id": 1260,
+      "title": "Jane Eyre",
+      "author": "Bronte",
+      "year": 1847,
+      "genre": "Gothic Romance"
+    },
+    {
+      "id": 345,
+      "title": "Dracula",
+      "author": "Stoker",
+      "year": 1897,
+      "genre": "Gothic Horror"
+    },
+    {
+      "id": 42,
+      "title": "The Strange Case of Dr. Jekyll and Mr. Hyde",
+      "author": "Stevenson",
+      "year": 1886,
+      "genre": "Gothic"
+    },
+    {
+      "id": 16328,
+      "title": "Beowulf",
+      "author": "Unknown",
+      "year": 1000,
+      "genre": "Epic"
+    },
+    {
+      "id": 2600,
+      "title": "War and Peace",
+      "author": "Tolstoy",
+      "year": 1869,
+      "genre": "Historical Fiction"
+    },
+    {
+      "id": 2554,
+      "title": "Crime and Punishment",
+      "author": "Dostoyevsky",
+      "year": 1866,
+      "genre": "Psychological"
+    },
+    {
+      "id": 408,
+      "title": "The Souls of Black Folk",
+      "author": "Du Bois",
+      "year": 1903,
+      "genre": "Social Commentary"
+    },
+    {
+      "id": 514,
+      "title": "Little Dorrit",
+      "author": "Dickens",
+      "year": 1857,
+      "genre": "Social Commentary"
+    },
+    {
+      "id": 1232,
+      "title": "The Prince and the Pauper",
+      "author": "Twain",
+      "year": 1881,
+      "genre": "Historical Fiction"
+    },
+    {
+      "id": 76,
+      "title": "Adventures of Huckleberry Finn",
+      "author": "Twain",
+      "year": 1884,
+      "genre": "Adventure"
+    },
+    {
+      "id": 244,
+      "title": "A Study in Scarlet",
+      "author": "Doyle",
+      "year": 1887,
+      "genre": "Mystery"
+    },
+    {
+      "id": 2852,
+      "title": "The Three Musketeers",
+      "author": "Dumas",
+      "year": 1844,
+      "genre": "Adventure"
+    }
+  ],
+  "scientific": [
+    {
+      "id": 1228,
+      "title": "Origin of Species",
+      "author": "Darwin",
+      "year": 1859,
+      "genre": "Biology"
+    },
+    {
+      "id": 37134,
+      "title": "Principles of Philosophy",
+      "author": "Descartes",
+      "year": 1644,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 4699,
+      "title": "Essay Concerning Human Understanding",
+      "author": "Locke",
+      "year": 1689,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 5001,
+      "title": "Critique of Pure Reason",
+      "author": "Kant",
+      "year": 1781,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 1497,
+      "title": "Republic",
+      "author": "Plato",
+      "year": -380,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 3300,
+      "title": "Ethics",
+      "author": "Spinoza",
+      "year": 1677,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 4705,
+      "title": "Principles of Psychology",
+      "author": "James",
+      "year": 1890,
+      "genre": "Psychology"
+    },
+    {
+      "id": 5827,
+      "title": "Wealth of Nations",
+      "author": "Smith",
+      "year": 1776,
+      "genre": "Economics"
+    },
+    {
+      "id": 1017,
+      "title": "Critique of Practical Reason",
+      "author": "Kant",
+      "year": 1788,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 7370,
+      "title": "Second Treatise of Government",
+      "author": "Locke",
+      "year": 1689,
+      "genre": "Political Philosophy"
+    },
+    {
+      "id": 1524,
+      "title": "Discourse on Method",
+      "author": "Descartes",
+      "year": 1637,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 4320,
+      "title": "An Enquiry Concerning Human Understanding",
+      "author": "Hume",
+      "year": 1748,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 5827,
+      "title": "Principles of Political Economy",
+      "author": "Mill",
+      "year": 1848,
+      "genre": "Economics"
+    },
+    {
+      "id": 1670,
+      "title": "Metaphysics",
+      "author": "Aristotle",
+      "year": -350,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 2412,
+      "title": "Thus Spoke Zarathustra",
+      "author": "Nietzsche",
+      "year": 1883,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 5289,
+      "title": "The Elementary Forms of Religious Life",
+      "author": "Durkheim",
+      "year": 1912,
+      "genre": "Sociology"
+    },
+    {
+      "id": 1918,
+      "title": "Pragmatism",
+      "author": "James",
+      "year": 1907,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 4363,
+      "title": "Beyond Good and Evil",
+      "author": "Nietzsche",
+      "year": 1886,
+      "genre": "Philosophy"
+    },
+    {
+      "id": 5500,
+      "title": "Capital",
+      "author": "Marx",
+      "year": 1867,
+      "genre": "Economics"
+    },
+    {
+      "id": 2447,
+      "title": "The Analysis of Mind",
+      "author": "Russell",
+      "year": 1921,
+      "genre": "Philosophy"
+    }
+  ],
+  "historical": [
+    {
+      "id": 2591,
+      "title": "Democracy in America",
+      "author": "Tocqueville",
+      "year": 1835,
+      "genre": "Political History"
+    },
+    {
+      "id": 1404,
+      "title": "The Prince",
+      "author": "Machiavelli",
+      "year": 1532,
+      "genre": "Political Theory"
+    },
+    {
+      "id": 3207,
+      "title": "Leviathan",
+      "author": "Hobbes",
+      "year": 1651,
+      "genre": "Political Philosophy"
+    },
+    {
+      "id": 1656,
+      "title": "The Social Contract",
+      "author": "Rousseau",
+      "year": 1762,
+      "genre": "Political Philosophy"
+    },
+    {
+      "id": 2130,
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "year": -500,
+      "genre": "Military History"
+    },
+    {
+      "id": 3207,
+      "title": "Two Years Before the Mast",
+      "author": "Dana",
+      "year": 1840,
+      "genre": "Maritime History"
+    },
+    {
+      "id": 2713,
+      "title": "U.S. Declaration of Independence",
+      "author": "Jefferson et al.",
+      "year": 1776,
+      "genre": "Political History"
+    },
+    {
+      "id": 4901,
+      "title": "The Federalist Papers",
+      "author": "Hamilton et al.",
+      "year": 1788,
+      "genre": "Political History"
+    },
+    {
+      "id": 1404,
+      "title": "The History of the Peloponnesian War",
+      "author": "Thucydides",
+      "year": -400,
+      "genre": "Military History"
+    },
+    {
+      "id": 3156,
+      "title": "The Rights of Man",
+      "author": "Paine",
+      "year": 1791,
+      "genre": "Political History"
+    }
+  ]
+}

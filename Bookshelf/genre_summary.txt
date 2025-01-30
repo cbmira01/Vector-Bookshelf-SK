@@ -1,0 +1,29 @@
+Summary of Genres Covered:
+Novels:
+    Romance
+    Gothic
+    Fantasy
+    Mystery
+    Adventure
+    Historical Fiction
+    Coming of Age
+    Realism
+    Gothic Romance
+    Gothic Horror
+    Comedy
+    Psychological
+    Social Commentary
+    Epic
+Scientific:
+    Biology
+    Philosophy
+    Psychology
+    Economics
+    Political Philosophy
+    Sociology
+Historical:
+    Political History
+    Political Theory
+    Political Philosophy
+    Military History
+    Maritime History
