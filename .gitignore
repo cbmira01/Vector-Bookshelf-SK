@@ -401,4 +401,18 @@ FodyWeavers.xsd
 
 # Aider coding tool https://aider.chat/
 .aider*
+
+# File 'rdf-files.tar.zip' is the metadata cache for Project Gutenberg.
+# It is needed to build the graph database to aid in item processing.
+#
+# This file is ignored because it is too large to commit to GitHub.
+#
+# Get the most recent one from https://www.gutenberg.org/cache/epub/feeds/
+#       and place it in the 'Src/GutenbergGraphBuilder/Resources' folder.
+#
+# It's really not necessary to position the file for the 'GutenbergMetadataLookup'
+#       project, unless you want to play with model code for ZIP/TAR processing.
+
 Src/GutenbergMetadataLookup/Resources/rdf-files.tar.zip
+Src/GutenbergGraphBuilder/Resources/rdf-files.tar.zip
+
