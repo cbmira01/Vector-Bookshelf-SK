@@ -401,3 +401,4 @@ FodyWeavers.xsd
 
 # Aider coding tool https://aider.chat/
 .aider*
+Src/GutenbergMetadataLookup/Resources/rdf-files.tar.zip
