@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GutenbergGraphBuilder": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
