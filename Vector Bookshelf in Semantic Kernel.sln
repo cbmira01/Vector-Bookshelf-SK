@@ -26,6 +26,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GutenbergMetadataLookup", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GutenbergGraphBuilder", "Src\GutenbergGraphBuilder\GutenbergGraphBuilder.csproj", "{4EA4B717-29B8-4CE1-971B-4AD2E066AF0A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Configuration", "Service Configuration", "{E9941743-DA4D-4884-8DBB-979E10E719F8}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fuseki", "Fuseki", "{0288118A-0B8F-4497-8BA9-71DD452159D6}"
+	ProjectSection(SolutionItems) = preProject
+		ServiceConfig\fuseki\shiro.ini.template = ServiceConfig\fuseki\shiro.ini.template
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,5 +57,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BF1FC4A6-2A38-4698-806E-D4CE2F9093F0} = {E621BC19-5A82-4319-A4CD-92D6263969FF}
 		{4EA4B717-29B8-4CE1-971B-4AD2E066AF0A} = {E621BC19-5A82-4319-A4CD-92D6263969FF}
+		{0288118A-0B8F-4497-8BA9-71DD452159D6} = {E9941743-DA4D-4884-8DBB-979E10E719F8}
 	EndGlobalSection
 EndGlobal

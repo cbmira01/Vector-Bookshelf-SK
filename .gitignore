@@ -416,3 +416,5 @@ FodyWeavers.xsd
 Src/GutenbergMetadataLookup/Resources/rdf-files.tar.zip
 Src/GutenbergGraphBuilder/Resources/rdf-files.tar.zip
 
+# Ignore files containing sensitive credentials.
+shiro.ini

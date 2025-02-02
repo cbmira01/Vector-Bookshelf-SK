@@ -1,0 +1,40 @@
+services:
+  fuseki:
+    image: stain/jena-fuseki
+    container_name: fuseki
+    ports:
+      - "3030:3030"
+    volumes:
+      - fuseki_data:/fuseki           # persists Fuseki base data
+      - ./tdb2-dataset.ttl:/jena-fuseki/config/tdb2-dataset.ttl  # custom dataset config
+      - ./tdb2data:/fuseki/DB         # persists TDB2 data directory
+    networks:
+      - vds_network
+    command: ["--config=/jena-fuseki/config/tdb2-dataset.ttl"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3030"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  gutenberggraphbuilder:
+    build:
+      context: .
+      dockerfile: Src/GutenbergGraphBuilder/Dockerfile
+    container_name: gutenberggraphbuilder
+    depends_on:
+      fuseki:
+        condition: service_healthy  # Ensures Fuseki is fully ready
+    networks:
+      - vds_network
+    environment:
+      - FUSEKI_URL=http://fuseki:3030/dataset  # Update for Fuseki
+      - FUSEKI_UPDATE_URL=http://fuseki:3030/dataset/update  # SPARQL Update Endpoint
+      - FUSEKI_QUERY_URL=http://fuseki:3030/dataset/query  # SPARQL Query Endpoint
+
+volumes:
+  - fuseki_data:/fuseki
+  - ./config/shiro.ini:/jena-fuseki/shiro.ini
+
+networks:
+  vds_network:
