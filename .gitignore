@@ -402,6 +402,19 @@ FodyWeavers.xsd
 # Aider coding tool https://aider.chat/
 .aider*
 
+
+### Ignore Fuseki persistent data ###
+
+    # Ignore TDB2 persistent data directory
+    ServiceConfig/fuseki/tdb2data/
+
+    # Ignore generated shiro.ini
+    ServiceConfig/fuseki/shiro.ini
+
+    # Ignore any logs directory if it exists
+    ServiceConfig/fuseki/logs/
+
+
 # File 'rdf-files.tar.zip' is the metadata cache for Project Gutenberg.
 # It is needed to build the graph database to aid in item processing.
 #
@@ -413,8 +426,9 @@ FodyWeavers.xsd
 # It's really not necessary to position the file for the 'GutenbergMetadataLookup'
 #       project, unless you want to play with model code for ZIP/TAR processing.
 
-Src/GutenbergMetadataLookup/Resources/rdf-files.tar.zip
-Src/GutenbergGraphBuilder/Resources/rdf-files.tar.zip
+    Src/GutenbergMetadataLookup/Resources/rdf-files.tar.zip
+    Src/GutenbergGraphBuilder/Resources/rdf-files.tar.zip
 
-# Ignore files containing sensitive credentials.
-shiro.ini
+/Src/GutenbergMetadataLookup/Resources/rdf-files.tar.zip
+/Src/GutenbergGraphBuilder/Resources/rdf-files.tar.zip
+/ServiceConfig/fuseki/shiro.ini
