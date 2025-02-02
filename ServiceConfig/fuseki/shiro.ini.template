@@ -20,7 +20,9 @@ admin = <YOUR-ADMIN-PASSWORD>
 admin = *
 
 [urls]
-# Require basic authentication for all endpoints.
-# The '/$/datasets' endpoint is for administration and must be secured.
+# Allow unauthenticated access to the health check endpoint.
+/$/ping = anon
+
+# Secure administration endpoints.
 $/datasets = authcBasic, roles[admin]
 /** = authcBasic

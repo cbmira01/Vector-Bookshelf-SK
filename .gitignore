@@ -402,6 +402,8 @@ FodyWeavers.xsd
 # Aider coding tool https://aider.chat/
 .aider*
 
+#Ignore service secrets
+.env
 
 ### Ignore Fuseki persistent data ###
 
