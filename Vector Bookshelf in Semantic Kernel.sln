@@ -29,6 +29,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Configuration", "Service Configuration", "{E9941743-DA4D-4884-8DBB-979E10E719F8}"
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
+		.env-template = .env-template
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject

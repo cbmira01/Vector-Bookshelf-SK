@@ -1,7 +1,7 @@
 ##
 ## This is a template for the eventual Fuseki service configuration file.
 ##
-## Copy this template file to 'shiro.ini', then fill in the <templated> items below.
+## Copy this template file to 'shiro.ini', then fill in the <<templated>> items below.
 ##
 ## WARNING: Do not commit this file if it contains real credentials. 
 ##      Use .gitignore to prevent accidental commits.
@@ -13,7 +13,7 @@ authcBasic = org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter
 
 [users]
 # Define users and passwords. Replace <YOUR-ADMIN-PASSWORD> with your desired admin password.
-admin = <YOUR-ADMIN-PASSWORD>
+admin = <<YOUR-ADMIN-PASSWORD>>
 
 [roles]
 # Assign roles to users. The admin role has full permissions.
