@@ -15,18 +15,20 @@ namespace GutenbergGraphBuilder
             string fusekiUsername = Environment.GetEnvironmentVariable("FUSEKI_USERNAME") ?? "yourUsername";
             string fusekiPassword = Environment.GetEnvironmentVariable("FUSEKI_PASSWORD") ?? "yourPassword";
 
-            // Insert data
+            // Insert data (note named graph)
             string rdfData = @"
                 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                PREFIX dc: <http://purl.org/dc/elements/1.1/>
-                PREFIX book: <http://example.org/book/>
+                PREFIX dc:  <http://purl.org/dc/elements/1.1/>
+                PREFIX book:<http://example.org/book/>
 
-                INSERT DATA { 
+                INSERT DATA {
+                  GRAPH <http://example.org/gutenberg> {
                     book:book1 rdf:type book:Book ;
-                        dc:title ""The Great Gatsby"" ;
-                        dc:creator ""F. Scott Fitzgerald"" ;
-                        dc:date ""1925"" ;
-                        book:genre ""Fiction"" .
+                               dc:title ""The Great Gatsby"" ;
+                               dc:creator ""F. Scott Fitzgerald"" ;
+                               dc:date ""1925"" ;
+                               book:genre ""Fiction"" .
+                  }
                 }";
 
             using HttpClient client = new HttpClient();
@@ -39,7 +41,7 @@ namespace GutenbergGraphBuilder
             HttpResponseMessage response = await client.PostAsync(fusekiUpdateUrl, content);
             Console.WriteLine($"Update Response: {response.StatusCode}");
 
-            // Query to verify data
+            // Query to verify data (note query directed to the default graph)
             string queryString = @"
                 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                 PREFIX dc: <http://purl.org/dc/elements/1.1/>
