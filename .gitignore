@@ -405,14 +405,14 @@ FodyWeavers.xsd
 
 ### Ignore Fuseki persistent data ###
 
-    # Ignore TDB2 persistent data directory
-    ServiceConfig/fuseki/tdb2data/
+# Ignore TDB2 persistent data directory
+ServiceConfig/fuseki/tdb2data/
 
-    # Ignore generated shiro.ini
-    ServiceConfig/fuseki/shiro.ini
+# Ignore generated shiro.ini
+ServiceConfig/fuseki/shiro.ini
 
-    # Ignore any logs directory if it exists
-    ServiceConfig/fuseki/logs/
+# Ignore any logs directory if it exists
+ServiceConfig/fuseki/logs/
 
 
 # File 'rdf-files.tar.zip' is the metadata cache for Project Gutenberg.
@@ -426,9 +426,5 @@ FodyWeavers.xsd
 # It's really not necessary to position the file for the 'GutenbergMetadataLookup'
 #       project, unless you want to play with model code for ZIP/TAR processing.
 
-    Src/GutenbergMetadataLookup/Resources/rdf-files.tar.zip
-    Src/GutenbergGraphBuilder/Resources/rdf-files.tar.zip
-
-/Src/GutenbergMetadataLookup/Resources/rdf-files.tar.zip
-/Src/GutenbergGraphBuilder/Resources/rdf-files.tar.zip
-/ServiceConfig/fuseki/shiro.ini
+Src/GutenbergMetadataLookup/Resources/rdf-files.tar.zip
+Src/GutenbergGraphBuilder/Resources/rdf-files.tar.zip

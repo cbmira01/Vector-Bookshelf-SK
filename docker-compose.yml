@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   fuseki:
     image: stain/jena-fuseki
@@ -5,9 +7,10 @@ services:
     ports:
       - "3030:3030"
     volumes:
-      - fuseki_data:/fuseki           # persists Fuseki base data
-      - ./tdb2-dataset.ttl:/jena-fuseki/config/tdb2-dataset.ttl  # custom dataset config
-      - ./tdb2data:/fuseki/DB         # persists TDB2 data directory
+      - fuseki_data:/fuseki
+      - ./ServiceConfig/fuseki/tdb2-dataset.ttl:/jena-fuseki/config/tdb2-dataset.ttl
+      - ./ServiceConfig/fuseki/tdb2data:/fuseki/DB
+      - ./ServiceConfig/fuseki/shiro.ini:/jena-fuseki/shiro.ini
     networks:
       - vds_network
     command: ["--config=/jena-fuseki/config/tdb2-dataset.ttl"]
@@ -24,17 +27,16 @@ services:
     container_name: gutenberggraphbuilder
     depends_on:
       fuseki:
-        condition: service_healthy  # Ensures Fuseki is fully ready
+        condition: service_healthy
     networks:
       - vds_network
     environment:
-      - FUSEKI_URL=http://fuseki:3030/dataset  # Update for Fuseki
-      - FUSEKI_UPDATE_URL=http://fuseki:3030/dataset/update  # SPARQL Update Endpoint
-      - FUSEKI_QUERY_URL=http://fuseki:3030/dataset/query  # SPARQL Query Endpoint
+      - FUSEKI_URL=http://fuseki:3030/dataset
+      - FUSEKI_UPDATE_URL=http://fuseki:3030/dataset/update
+      - FUSEKI_QUERY_URL=http://fuseki:3030/dataset/query
 
 volumes:
-  - fuseki_data:/fuseki
-  - ./config/shiro.ini:/jena-fuseki/shiro.ini
+  fuseki_data: {}
 
 networks:
-  vds_network:
+  vds_network: {}
