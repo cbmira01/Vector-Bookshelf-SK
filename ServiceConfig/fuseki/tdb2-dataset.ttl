@@ -15,6 +15,8 @@
     fuseki:serviceQuery "query" ;    # SPARQL query service
     fuseki:serviceUpdate "update" ;   # SPARQL update service
     fuseki:serviceUpload "upload" ;   # File upload service
+    fuseki:serviceReadGraphStore "get" ;
+    fuseki:serviceReadWriteGraphStore "data" ;  # Enables Graph Store Protocol (GSP)
     fuseki:dataset <#dataset> .
 
 <#dataset> rdf:type tdb2:DatasetTDB2 ;

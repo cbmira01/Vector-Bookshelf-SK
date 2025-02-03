@@ -21,4 +21,18 @@ RUN dotnet publish "./GutenbergGraphBuilder.csproj" -c $BUILD_CONFIGURATION -o /
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+COPY Src/GutenbergGraphBuilder/Resources /app/Resources 
+
+# Install .NET Debugging tools
+RUN apt-get update \
+    && apt-get install -y unzip curl \
+    && curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v latest -l /vsdbg
+
+# Expose debugging port
+EXPOSE 4025
+
+# Add infinite loop to keep container alive (wait for debugger)
+# CMD ["sh", "-c", "echo 'GutenbergGraphBuilder is running. Attach debugger and press ENTER to start...'; read input; dotnet GutenbergGraphBuilder.dll"]
+
+# Start without waiting for debugger
 ENTRYPOINT ["dotnet", "GutenbergGraphBuilder.dll"]

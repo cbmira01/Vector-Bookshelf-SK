@@ -34,8 +34,11 @@ services:
       - FUSEKI_URL=http://fuseki:3030/dataset
       - FUSEKI_UPDATE_URL=http://fuseki:3030/dataset/update
       - FUSEKI_QUERY_URL=http://fuseki:3030/dataset/query
+      - FUSEKI_DATA_URL=http://fuseki:3030/dataset/data?graph=http://projectgutenberg.org/graph/ebooks
       - FUSEKI_USERNAME=${FUSEKI_USERNAME}
       - FUSEKI_PASSWORD=${FUSEKI_PASSWORD}
+    ports:
+      - "4025:4025"
 
 volumes:
   fuseki_data: {}
