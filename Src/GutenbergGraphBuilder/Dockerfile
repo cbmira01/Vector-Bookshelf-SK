@@ -31,8 +31,4 @@ RUN apt-get update \
 # Expose debugging port
 EXPOSE 4025
 
-# Add infinite loop to keep container alive (wait for debugger)
-# CMD ["sh", "-c", "echo 'GutenbergGraphBuilder is running. Attach debugger and press ENTER to start...'; read input; dotnet GutenbergGraphBuilder.dll"]
-
-# Start without waiting for debugger
 ENTRYPOINT ["dotnet", "GutenbergGraphBuilder.dll"]

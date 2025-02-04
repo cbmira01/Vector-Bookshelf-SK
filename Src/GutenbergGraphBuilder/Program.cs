@@ -15,12 +15,14 @@ namespace GutenbergGraphBuilder
         static void Main(string[] args)
         {
 
+#if DEBUG
             Console.WriteLine("Waiting for debugger to attach...");
             while (!Debugger.IsAttached)
             {
                 Thread.Sleep(100);
             }
             Console.WriteLine("Debugger is attached!");
+#endif
 
             // Get the Graph Store Protocol endpoint URL for loading data
             _fusekiDataUrl = Environment.GetEnvironmentVariable("FUSEKI_DATA_URL")
@@ -77,11 +79,6 @@ namespace GutenbergGraphBuilder
                             totalBytesRead += bytesRead;
                         }
 
-                        //Console.WriteLine($"First 500 chars:\n{rdfContent.ToString()[..Math.Min(500, rdfContent.Length)]}");
-                        //Console.WriteLine($"Fully read {totalBytesRead} bytes from {tarReader.Entry.Key}");
-                        //Console.WriteLine("Press Enter to continue...");
-                        //Console.ReadLine();
-
                         sumSize += tarReader.Entry.Size;
 
                         bool isSuccess = SendRdfToGraphStoreAsync(rdfContent.ToString())
@@ -118,8 +115,8 @@ namespace GutenbergGraphBuilder
                 // Create content with RDF/XML MIME type
                 var content = new StringContent(rdfXmlContent, Encoding.UTF8, "application/rdf+xml");
 
-                // Use PUT for bulk upload
-                HttpResponseMessage response = await client.PutAsync(_fusekiDataUrl, content);
+                // Use POST to append data to the existing graph
+                HttpResponseMessage response = await client.PostAsync(_fusekiDataUrl, content);
 
                 // Log response details
                 Console.WriteLine($"Response: {response.StatusCode}");
