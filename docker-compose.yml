@@ -24,6 +24,8 @@ services:
     build:
       context: .
       dockerfile: Src/GutenbergGraphBuilder/Dockerfile
+      args:
+        BUILD_CONFIGURATION: ${BUILD_CONFIGURATION:-Release}  # Use environment variable or default to Release
     container_name: gutenberggraphbuilder
     depends_on:
       fuseki:

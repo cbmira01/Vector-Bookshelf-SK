@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Configuration", "Se
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
 		.env-template = .env-template
+		build-and-run.bat = build-and-run.bat
+		docker-compose.override.yml = docker-compose.override.yml
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject

@@ -11,9 +11,24 @@ namespace GutenbergGraphBuilder
         private static string _fusekiDataUrl = null!;
         private static string _fusekiUsername = null!;
         private static string _fusekiPassword = null!;
+        private static readonly string _stateFilePath = "/app/state.initialized"; // Signal for record loading
 
         static void Main(string[] args)
         {
+
+#if DEBUG
+            Console.WriteLine("\nGraph Builder running in DEBUG configuration.");
+#else
+            Console.WriteLine("\nGraph Builder running in RELEASE configuration.");
+#endif
+
+            // Trigger the record load from Docker Desktop (click RUN)
+            if (!File.Exists(_stateFilePath))
+            {
+                Console.Write("\nTrigger the record load from Docker Desktop (click START)...\n\n");
+                File.Create(_stateFilePath).Close(); // Create the state file
+                return; // Exit without loading records
+            }
 
 #if DEBUG
             Console.WriteLine("Waiting for debugger to attach...");
@@ -23,6 +38,7 @@ namespace GutenbergGraphBuilder
             }
             Console.WriteLine("Debugger is attached!");
 #endif
+            Console.Write("\nProceeding to record load..\n\n");
 
             // Get the Graph Store Protocol endpoint URL for loading data
             _fusekiDataUrl = Environment.GetEnvironmentVariable("FUSEKI_DATA_URL")
@@ -37,6 +53,9 @@ namespace GutenbergGraphBuilder
 
         public static void ProcessRdfFiles(string tarZipPath)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start(); // Start the timer
+
             try
             {
                 using var zipStream = File.OpenRead(tarZipPath);
@@ -85,20 +104,24 @@ namespace GutenbergGraphBuilder
                             .GetAwaiter().GetResult();
 
                         if (isSuccess)
-                            Console.WriteLine("RDF data successfully sent...");
+                            Console.WriteLine("    RDF data successfully sent...");
                         else
                             Console.WriteLine("Failed to send RDF data.");
 
-                        if (numFiles >= 10) { return; } // limit for testing
+                        if (numFiles >= 10) { break; } // limit for testing
                     }
                 }
 
-                Console.WriteLine($"All RDF files processed, {numFiles} files, {sumSize} bytes.");
+                stopwatch.Stop(); // Stop the timer
+                Console.Write($"\nAll RDF files processed; {numFiles} files, {sumSize} bytes, ");
+                Console.WriteLine($"about {stopwatch.Elapsed.TotalSeconds:F2} seconds.");
                 return;
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error in GetRdfContent: {ex.Message}");
+                stopwatch.Stop(); // Stop the timer in case of an error
+                Console.WriteLine($"Error in ProcessRdfFiles: {ex.Message}");
+                Console.WriteLine($"Time taken before error: {stopwatch.Elapsed.TotalSeconds:F2} seconds.");
                 return;
             }
         }
@@ -119,8 +142,11 @@ namespace GutenbergGraphBuilder
                 HttpResponseMessage response = await client.PostAsync(_fusekiDataUrl, content);
 
                 // Log response details
-                Console.WriteLine($"Response: {response.StatusCode}");
+                Console.WriteLine($"    Response: {response.StatusCode}");
+
+#if DEBUG
                 Console.WriteLine(await response.Content.ReadAsStringAsync());
+#endif
 
                 // Consider 2xx status codes as success
                 return response.IsSuccessStatusCode;
