@@ -6,9 +6,8 @@ services:
     ports:
       - "3030:3030"
     volumes:
-      - fuseki_data:/fuseki
+      - fuseki_data:/fuseki/DB  # Named volume for database files
       - ./ServiceConfig/fuseki/tdb2-dataset.ttl:/fuseki/config.ttl
-      - ./ServiceConfig/fuseki/tdb2data:/fuseki/DB
       - ./ServiceConfig/fuseki/shiro.ini:/fuseki/shiro.ini
     networks:
       - vds_network
