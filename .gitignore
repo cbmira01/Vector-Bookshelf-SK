@@ -402,7 +402,7 @@ FodyWeavers.xsd
 # Aider coding tool https://aider.chat/
 .aider*
 
-#Ignore service secrets
+# Ignore service secrets - use .env-template as a starting point
 .env
 
 # Ignore Fuseki configuration
